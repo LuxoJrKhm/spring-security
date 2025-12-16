@@ -1,5 +1,6 @@
 package com.my.ch2ex5.security;
 
+import jakarta.annotation.Nonnull;
 import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -32,7 +33,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
     }
 
     @Override
-    public boolean supports(Class<?> authentication) {
+    public boolean supports(@Nonnull Class<?> authentication) {
         return UsernamePasswordAuthenticationToken.class.isAssignableFrom(authentication);
     }
 }
